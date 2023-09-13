@@ -18,10 +18,9 @@ class HomeController extends GetxController {
   Future<void> sendEmail() async {
     final Uri emailLaunchUri = Uri(
       scheme: 'mailto',
-      path: 'ahmad.abowatan.2000@gmail.com',
+      path: 'eng.ahmadmdadeh@gmail.com',
       queryParameters: {
-        'subject': 'Your subject here',
-        'body': 'Your email content here',
+        'subject': 'Hi,Ahmad',
       },
     );
 

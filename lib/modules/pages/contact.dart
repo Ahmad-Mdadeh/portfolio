@@ -225,7 +225,7 @@ class Contact extends StatelessWidget {
       ),
     )
         .animate(delay: 200.ms)
-        .slideX(duration: 600.ms, begin: -0.25)
+        .slideX(duration: 600.ms, begin: -0.1)
         .fadeIn(duration: 1000.ms);
   }
 }

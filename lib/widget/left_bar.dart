@@ -43,7 +43,7 @@ class LeftBar extends StatelessWidget {
                   child: RotatedBox(
                     quarterTurns: 1,
                     child: TextWidget(
-                      text: "ahmad.watan.2000@gmail.com",
+                      text: "eng.ahmadmdadeh@gmail.com",
                       fontSize: FontSize.s14,
                       color: isHoveredE.value
                           ? ColorManager.primary

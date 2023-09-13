@@ -7,13 +7,13 @@ import 'package:portfolio/widget/text_widget.dart';
 import 'package:responsive_framework/responsive_framework.dart' as res;
 
 class TechnologiesList extends StatelessWidget {
-  final String technology;
+  final String technology1;
   final String technology2;
   final double width;
 
   const TechnologiesList({
     super.key,
-    required this.technology,
+    required this.technology1,
     required this.technology2,
     required this.width,
   });
@@ -38,7 +38,7 @@ class TechnologiesList extends StatelessWidget {
                 width: 8,
               ),
               TextWidget(
-                text: technology,
+                text: technology1,
                 fontSize: FontSize.s16,
                 color: ColorManager.secondary,
                 fontFamily: "poppins",

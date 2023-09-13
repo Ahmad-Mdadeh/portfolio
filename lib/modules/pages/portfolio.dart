@@ -1,13 +1,13 @@
-import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/resources/assets_manager.dart';
 import 'package:portfolio/resources/color_manager.dart';
 import 'package:portfolio/resources/font_manager.dart';
+import 'package:portfolio/resources/string_manager.dart';
 import 'package:portfolio/resources/values_manager.dart';
 import 'package:portfolio/widget/portfolio_item_desktop.dart';
-import 'package:portfolio/widget/portfolio_item_moile.dart';
+import 'package:portfolio/widget/portfolio_item_mobile.dart';
 import 'package:portfolio/widget/text_widget.dart';
 import 'package:responsive_framework/responsive_framework.dart' as res;
 
@@ -18,6 +18,7 @@ class Portfolio extends StatelessWidget {
     false,
     true,
   ];
+
   final List image = [
     ImagesAssets.photo2,
     ImagesAssets.photo3,
@@ -32,7 +33,7 @@ class Portfolio extends StatelessWidget {
         bottom: AppPadding.p270,
         left: res.ResponsiveWrapper.of(context).isSmallerThan(res.TABLET)
             ? AppPadding.p20
-            : MediaQuery.of(context).size.width * 0.18,
+            : MediaQuery.of(context).size.width * 0.20,
         right: res.ResponsiveWrapper.of(context).isSmallerThan(res.TABLET)
             ? AppPadding.p20
             : 0,
@@ -53,7 +54,7 @@ class Portfolio extends StatelessWidget {
                       padding: const EdgeInsets.only(top: 3.2),
                       child: TextWidget(
                         text: "03.",
-                        fontSize: FontSize.s17,
+                        fontSize: FontSize.s18,
                         color: ColorManager.primary,
                         fontWeight: FontWeightManager.light,
                         fontFamily: 'ibm',
@@ -64,7 +65,7 @@ class Portfolio extends StatelessWidget {
                     ),
                     TextWidget(
                       text: "Some Things I`ve Build",
-                      fontSize: FontSize.s18,
+                      fontSize: FontSize.s19,
                       color: ColorManager.white,
                       fontWeight: FontWeightManager.bold,
                       fontFamily: 'jost',
@@ -85,7 +86,7 @@ class Portfolio extends StatelessWidget {
             ],
           )
               .animate()
-              .slideX(duration: 600.ms, begin: 0.25)
+              .slideX(duration:600.ms, begin: 0.1)
               .fadeIn(duration: 1000.ms),
           res.ResponsiveVisibility(
             visible: true,
@@ -98,6 +99,9 @@ class Portfolio extends StatelessWidget {
                 scrollDirection: Axis.vertical,
                 itemCount: 3,
                 itemBuilder: (context, index) => PortfolioItemDesktop(
+                  projectDescription: projectDescription[index],
+                  projectName: projectName[index],
+                  url: urlList[0],
                   isHovered: false.obs,
                   side: side[index],
                   image: image[index],
@@ -119,6 +123,9 @@ class Portfolio extends StatelessWidget {
                 scrollDirection: Axis.vertical,
                 itemCount: 3,
                 itemBuilder: (context, index) => PortfolioItemMobile(
+                  projectDescription:
+                      "A blog application using Flutter and firebase, In this project implement Firebase CURD operation, User can add post as well see all the post, In this project implement Firebase CURD operation, In this project implement operation.",
+                  projectName: "Property Management System",
                   isHovered: false.obs,
                   side: side[index],
                   image: image[index],

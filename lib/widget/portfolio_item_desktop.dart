@@ -2,6 +2,7 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
+import 'package:portfolio/modules/home/home_controller.dart';
 import 'package:portfolio/resources/color_manager.dart';
 import 'package:portfolio/resources/font_manager.dart';
 import 'package:portfolio/resources/values_manager.dart';
@@ -11,12 +12,19 @@ class PortfolioItemDesktop extends StatelessWidget {
   final RxBool isHovered;
   final bool side;
   final String image;
+  final String projectName;
+  final Uri url;
+  final String projectDescription;
+  final _homeController = Get.put(HomeController());
 
-  const PortfolioItemDesktop({
+  PortfolioItemDesktop({
     super.key,
     required this.isHovered,
     required this.side,
     required this.image,
+    required this.projectName,
+    required this.projectDescription,
+    required this.url,
   });
 
   @override
@@ -83,7 +91,7 @@ class PortfolioItemDesktop extends StatelessWidget {
                   height: 2,
                 ),
                 TextWidget(
-                  text: "Flutter ECommerce",
+                  text: projectName,
                   fontSize: FontSize.s26,
                   fontFamily: "jost",
                   color: ColorManager.ofWhite,
@@ -107,8 +115,7 @@ class PortfolioItemDesktop extends StatelessWidget {
                     child: Center(
                       child: TextWidget(
                         height: 1.6,
-                        text:
-                            "A blog application using Flutter and firebase, In this project implement Firebase CURD operation, User can add post as well see all the post, In this project implement Firebase CURD operation, In this project implement operation.",
+                        text: projectDescription,
                         fontSize: FontSize.s15,
                         fontFamily: "poppins",
                         color: ColorManager.secondary,
@@ -130,7 +137,7 @@ class PortfolioItemDesktop extends StatelessWidget {
                 ),
                 InkWell(
                   onTap: () {
-                    // Handle the tap event if needed
+                    _homeController.launchInBrowser(url);
                   },
                   splashColor: Colors.transparent,
                   highlightColor: Colors.transparent,

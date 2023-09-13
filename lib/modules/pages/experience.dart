@@ -19,7 +19,7 @@ class Experience extends StatelessWidget {
         bottom: AppPadding.p103,
         left: res.ResponsiveWrapper.of(context).isSmallerThan(res.TABLET)
             ? AppPadding.p20
-            : MediaQuery.of(context).size.width * 0.18,
+            : MediaQuery.of(context).size.width * 0.20,
         right: res.ResponsiveWrapper.of(context).isSmallerThan(res.TABLET)
             ? AppPadding.p20
             : 0,
@@ -44,7 +44,7 @@ class Experience extends StatelessWidget {
                         padding: const EdgeInsets.only(top: 3.2),
                         child: TextWidget(
                           text: "02.",
-                          fontSize: FontSize.s17,
+                          fontSize: FontSize.s18,
                           color: ColorManager.primary,
                           fontWeight: FontWeightManager.light,
                           fontFamily: 'ibm',
@@ -55,7 +55,7 @@ class Experience extends StatelessWidget {
                       ),
                       TextWidget(
                         text: "Where I`ve Worked",
-                        fontSize: FontSize.s18,
+                        fontSize: FontSize.s19,
                         color: ColorManager.white,
                         fontWeight: FontWeightManager.bold,
                         fontFamily: 'jost',
@@ -80,8 +80,8 @@ class Experience extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.fromLTRB(
-                    AppPadding.p12,
                     AppPadding.p37,
+                    AppPadding.p48,
                     0,
                     0,
                   ),
@@ -91,15 +91,15 @@ class Experience extends StatelessWidget {
                       height: 1.6,
                       color: ColorManager.secondary,
                       text:
-                          "I`m  software  engineer  specializing  in  building  and  design  exceptional  digital  experience. Currently,  I`m  focused  on  building  accessible,  human-centered  product  about  mobile  application ",
-                      fontSize: FontSize.s14,
+                          "Worked with a team of three people to build a property management system and e-commerce platform for a university project. ",
+                      fontSize: FontSize.s16,
                       fontFamily: "poppins",
                     ),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(
-                    AppPadding.p12,
+                    AppPadding.p37,
                     AppPadding.p24,
                     0,
                     0,
@@ -109,22 +109,26 @@ class Experience extends StatelessWidget {
                     child: TextWidget(
                       height: 1.5,
                       color: ColorManager.primary,
-                      text: "Scout Studio Developer",
-                      fontSize: FontSize.s14,
+                      text: "Damascus University",
+                      fontSize: FontSize.s16,
                       fontFamily: "jost",
                     ),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(
-                      AppPadding.p12, AppPadding.p12, 0, 0),
+                    AppPadding.p37,
+                    AppPadding.p12,
+                    0,
+                    0,
+                  ),
                   child: SizedBox(
                     width: size.width / 2.8,
                     child: TextWidget(
                       height: 1.5,
                       color: ColorManager.white,
-                      text: "January 2022",
-                      fontSize: FontSize.s14,
+                      text: "January 2021",
+                      fontSize: FontSize.s16,
                       fontFamily: "jost",
                     ),
                   ),
@@ -135,7 +139,12 @@ class Experience extends StatelessWidget {
               height: size.height * 0.1,
             ),
             Padding(
-              padding: EdgeInsets.only(left: size.width * 0.4),
+              padding: EdgeInsets.only(
+                left:
+                    res.ResponsiveWrapper.of(context).isSmallerThan(res.TABLET)
+                        ? size.width * 0.4
+                        : size.width * 0.3,
+              ),
               child: AnimatedSmoothIndicator(
                 activeIndex: 1,
                 count: 3,
@@ -152,7 +161,7 @@ class Experience extends StatelessWidget {
       ),
     )
         .animate(delay: 200.ms)
-        .slideX(duration: 600.ms, begin: 0.25)
+        .slideX(duration: 600.ms, begin: 0.1)
         .fadeIn(duration: 1000.ms);
   }
 }

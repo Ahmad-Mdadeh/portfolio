@@ -11,12 +11,15 @@ class PortfolioItemMobile extends StatelessWidget {
   final RxBool isHovered;
   final bool side;
   final String image;
+  final String projectName;
+  final String projectDescription;
 
   const PortfolioItemMobile({
     super.key,
     required this.isHovered,
     required this.side,
     required this.image,
+    required this.projectName, required this.projectDescription,
   });
 
   @override
@@ -83,7 +86,7 @@ class PortfolioItemMobile extends StatelessWidget {
                 height: 2,
               ),
               TextWidget(
-                text: "Flutter ECommerce",
+                text: projectName,
                 fontSize: FontSize.s26,
                 fontFamily: "jost",
                 color: ColorManager.ofWhite,
@@ -110,8 +113,7 @@ class PortfolioItemMobile extends StatelessWidget {
                     child: Center(
                       child: TextWidget(
                         height: 1.6,
-                        text:
-                            "A blog application using Flutter and firebase, In this project implement Firebase CURD operation, User can add post as well see all the post, In this project implement Firebase CURD operation, In this project implement operation.",
+                        text:projectDescription,
                         fontSize: FontSize.s15,
                         fontFamily: "poppins",
                         color: ColorManager.secondary,

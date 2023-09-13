@@ -14,10 +14,14 @@ import 'package:responsive_framework/responsive_framework.dart' as res;
 class About extends StatelessWidget {
   About({Key? key}) : super(key: key);
   final RxBool isHovered = false.obs;
-  final List technologiesName = [
+  final List technologiesName1 = [
     "Flutter",
-    "Flutter",
-    "Flutter",
+    "Git      ",
+    "OOP   ",
+  ];final List technologiesName2 = [
+    "Firebase",
+    "Rest Api",
+    "GetX",
   ];
 
   @override
@@ -27,7 +31,7 @@ class About extends StatelessWidget {
         bottom: AppPadding.p400,
         left: res.ResponsiveWrapper.of(context).isSmallerThan(res.TABLET)
             ? AppPadding.p20
-            : MediaQuery.of(context).size.width * 0.18,
+            : MediaQuery.of(context).size.width * 0.20,
         right: res.ResponsiveWrapper.of(context).isSmallerThan(res.TABLET)
             ? AppPadding.p20
             : 0,
@@ -82,11 +86,11 @@ class About extends StatelessWidget {
                   SizedBox(
                     width: 550,
                     child: TextWidget(
-                      wordSpacing: 8,
+                      wordSpacing: 3,
                       height: 1.6,
                       color: ColorManager.secondary,
                       text:
-                          "I`m software engineer specializing in building and design exceptional digital experience. Currently, I`m focused on building accessible, human-centered product about mobile application",
+                          "Hello!  My  name  is  Ahmad,  I'm  not  just a student,  I'm a passionate  explorer,  My  journey  extends  far  beyond the classroom, as I'm continuously brewing innovative ideas to challenge  the status quo  and  introduce  groundbreaking approaches.",
                       fontSize: FontSize.s16,
                       fontFamily: "poppins",
                     ),
@@ -98,10 +102,9 @@ class About extends StatelessWidget {
                     width: 550,
                     child: TextWidget(
                       height: 1.6,
-                      wordSpacing: 8,
+                      wordSpacing: 4,
                       color: ColorManager.secondary,
-                      text:
-                          "software engineer specializing in building and design exceptional digital experience. Currently, I`m focused on building accessible, human-centered product about mobile application centered product about mobile.",
+                      text: "Whether  it's  elevating  user  experiences  or  streamlining complex    processes,    I firmly    believe   in    technology's potential  to  shape  a brighter future. I`m  determined  to leaving  an  indelible   mark   by   crafting   solutions   that address the diverse needs of our global community.",
                       fontSize: FontSize.s16,
                       fontFamily: "poppins",
                     ),
@@ -152,6 +155,7 @@ class About extends StatelessWidget {
                   SizedBox(
                     width: 550,
                     child: TextWidget(
+                      wordSpacing: 9.7,
                       height: 1.7,
                       color: ColorManager.secondary,
                       text:
@@ -166,8 +170,8 @@ class About extends StatelessWidget {
                   ...List.generate(
                     3,
                     (index) => TechnologiesList(
-                      technology: technologiesName[index],
-                      technology2: technologiesName[index],
+                      technology1: technologiesName1[index],
+                      technology2: technologiesName2[index],
                       width: 120,
                     ),
                   ),
@@ -177,7 +181,7 @@ class About extends StatelessWidget {
           ),
           const res.ResponsiveRowColumnItem(
             child: SizedBox(
-              width: 50,
+              width: 70,
             ),
           ),
           res.ResponsiveRowColumnItem(
@@ -262,7 +266,7 @@ class About extends StatelessWidget {
       ),
     )
         .animate(delay: 200.ms)
-        .slideX(duration: 600.ms, begin: 0.25)
+        .slideX(duration: 600.ms, begin: 0.1)
         .fadeIn(duration: 1000.ms);
   }
 }

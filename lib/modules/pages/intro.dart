@@ -21,7 +21,7 @@ class Intro extends StatelessWidget {
         bottom: AppPadding.p400,
         left: res.ResponsiveWrapper.of(context).isSmallerThan(res.TABLET)
             ? AppPadding.p20
-            : MediaQuery.of(context).size.width * 0.18,
+            : MediaQuery.of(context).size.width * 0.20,
         right: res.ResponsiveWrapper.of(context).isSmallerThan(res.TABLET)
             ? AppPadding.p20
             : 0,
@@ -68,12 +68,13 @@ class Intro extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(right: AppPadding.p40),
             child: SizedBox(
-              width: 600,
+              width: 650,
               child: TextWidget(
                 height: 1.6,
                 color: ColorManager.secondary,
+                wordSpacing: 4,
                 text:
-                    "I`m software engineer specializing in building and design exceptional digital experience. Currently, I`m focused on building accessible, human-centered product about mobile application.",
+                    "I'm an Information Technology Engineering Student at Damascus University, Specialize\nin Software Engineering, and I Crafting dynamic apps with Flutter to provide seamless user experiences across platforms.",
                 fontSize: FontSize.s14,
                 fontFamily: "poppins",
               ),
